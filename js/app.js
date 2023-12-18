@@ -3,6 +3,11 @@ function comprar() {
     // identifica o tipo e quantidade
     let tipo = document.getElementById('tipo-ingresso').value;
     let qtd = parseInt(document.getElementById('qtd').value);
+    // Verificar se a quantidade é um número positivo
+    if (isNaN(qtd) || qtd <= 0) {
+        alert('Por favor, insira uma quantidade válida.');
+        return;
+    }
     // subtrair a quantidade comprada da quantidade disponível dos ingressos
     if(tipo == 'pista') {
         comprarPista(qtd);
